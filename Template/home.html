@@ -1,0 +1,443 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with LeadMark landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Home page | Empower</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="/static/assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + LeadMark main styles -->
+	<link rel="stylesheet" href="/static/assets/css/leadmark.css">
+    <style>
+         .header {
+  background: url('/static/assets/imgs/banner.JPG') no-repeat center center fixed;
+}
+    </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- page Navigation -->
+    <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/static/assets/imgs/logo.svg" alt="">
+            </a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">                     
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jobs">Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jobseeker">Jobseeker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/employers">Employers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contacts">Contact Us</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="" class="ml-4 nav-link btn btn-primary btn-sm rounded">SignUp</a>
+                    </li> -->
+                    <!-- drop down -->
+                    <div class="nav-item dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><button style="background-color: rgb(163, 99, 39); color: rgb(230, 233, 233);">{{user}}</button><b class="caret"></b></a>
+                        <div class="dropdown-menu">
+                            <a href="/updateprofile" class="dropdown-item"><i class="fa fa-user-o"></i>Update Profile</a>
+                            <a href="/userlogout" class="dropdown-item"><i class="fa fa-calendar-o"></i>Logout</a>
+                        </div>
+                    </div>
+                    <!-- drop ended -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Of Second Navigation -->
+
+    <!-- Page Header -->
+    <header class="header">
+        <div class="overlay">
+            <h1 class="subtitle"></h1>
+            <h1 class="title">Find The Best Startup Job<br> That Fit You Deserved</h1>  
+        </div>  
+        <div class="shape">
+            <svg viewBox="0 0 1500 200">
+                <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z"/>
+            </svg>
+        </div>  
+        <div class="mouse-icon"><div class="wheel"></div></div>
+    </header>
+    <!-- End Of Page Header -->
+
+    <!-- Service Section -->
+    <section  id="service" class="section pt-0">
+        <div class="container">
+            <h6 class="section-title text-center">Our Service</h6>
+            <h6 class="section-subtitle text-center mb-5 pb-3"></h6>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 mb-md-0">
+                        <div class="card-body">
+                            <small class="text-primary font-weight-bold">01</small>
+                            <h5 class="card-title mt-3"> Premium Membership. <h5>
+                            <p class="mb-0">Premium Members can apply for both Normal and Premium Jobs
+                    Exclusive Placement Drives only for Premium Members (to get you more Interview opportunities compared to others)
+                               </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 mb-md-0">
+                        <div class="card-body">
+                            <small class="text-primary font-weight-bold">02</small>
+                            <h5 class="card-title mt-3">Placement Paper<h5>
+                            <p class="mb-0"> Freshersworld is one of the most popular job sites in India, always helps jobseekers, mainly freshers to find the latest jobs in accordance with the qualification in all possible fields like Govt, Private, Engineering, IT, Bank, Defence etc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 mb-md-0">
+                        <div class="card-body">
+                            <small class="text-primary font-weight-bold">03</small>
+                            <h5 class="card-title mt-3">Interview Grooming<h5>
+                            <p class="mb-0">How to attend an interview confidently? Is there a sceret 1-to-1 session with our expert to understand your profile.
+                                Get a professional resume created by Freshersworld expert.
+                                Get your LinkedIn profile created by Freshersworld expert.</p>
+                        </div>
+                    </div>
+                </div>              
+            </div>
+        </div>
+    </section>
+    <!-- End OF Service Section -->
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-6 pr-md-5 mb-4 mb-md-0">
+                    <h6 class="section-title mb-0">About Company</h6>
+                    <h6 class="section-subtitle mb-4">Architecto provident deserunt</h6>
+                    <p >Are you a company owner? How about an HR professional or recruiter? If you want to attract the best talent, it is important to have an online job portal that is simple to use, full of features, and free of bugs.
+
+                        While this sounds simple enough, many companies ignore this advice. Instead, they stick with the “same old” online job portal that has been serving them for more than a decade. This is a big mistake.</p>
+                    <img src="/static/assets/imgs/about.jpg" alt="" class="w-100 mt-3 shadow-sm">
+                </div>
+                <div class="col-md-6 pl-md-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="/static/assets/imgs/about-1.jpg" alt="" class="w-100 shadow-sm">
+                        </div>
+                        <div class="col-6">
+                            <img src="/static/assets/imgs/about-2.jpg" alt="" class="w-100 shadow-sm">
+                        </div>
+                        <div class="col-12 mt-4">
+                            <p>A confusing, complex online job portal has a way of putting people off. For this reason, they don’t take the time to apply for open positions. Subsequently, the company doesn’t have the opportunity to compare the best available talent. Does your company need access to a free recruiting management system? Recruiteze can help! Get started today without any obligation..</p>
+                            <p><b>What can you do?</b><br>
+                            </p>
+                            <p>While the review part is simple, making the right changes can be difficult. One of the best things you can do is learn from others. Spend some time scouring the internet. Check out your competitors. Check out companies in other industries. What do you like about their online job portal? Are they using a recruiting management system? How can you implement the same on your website?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>              
+        </div>
+    </section>
+    <!-- End OF About Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio-section">
+        <div class="container">
+            <h6 class="section-title text-center">Our Portfolio</h6>
+            <h6 class="section-subtitle mb-5 text-center">New stunning projects for our amazing clients</h6>
+            <div class="filters">
+                <a href="#" data-filter=".new" class="active">
+                    New
+                </a>
+                <a href="#" data-filter=".advertising">
+                    Advertising
+                </a>
+                <a href="#" data-filter=".branding">
+                    Branding
+                </a>
+                <a href="#" data-filter=".web">
+                    Web
+                </a>
+            </div>
+            <div class="portfolio-container"> 
+                <div class="col-md-6 col-lg-4 web new">
+                    <div class="portfolio-item">
+                        <img src="/static/assets/imgs/web-1.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
+                        <div class="content-holder">
+                            <a class="img-popup" href="/static/assets/imgs/web-1.jpg"></a>
+                            <div class="text-holder">
+                                <h6 class="title">WEB</h6>
+                                <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                            </div>
+                        </div>   
+                    </div>             
+                </div>
+                <div class="col-md-6 col-lg-4 web new">
+                    <div class="portfolio-item">
+                        <img src="/static/assets/imgs/web-2.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
+                        <div class="content-holder">
+                            <a class="img-popup" href="/static/assets/imgs/web-2.jpg"></a>
+                            <div class="text-holder">
+                                <h6 class="title">WEB</h6>
+                                <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                            </div>
+                        </div> 
+                    </div>                         
+                </div>
+                <div class="col-md-6 col-lg-4 advertising new">
+                    <div class="portfolio-item">
+                        <img src="/static/assets/imgs/advertising-2.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">                         
+                        <div class="content-holder">
+                            <a class="img-popup" href="/static/assets/imgs/advertising-2.jpg"></a>
+                            <div class="text-holder">
+                                <h6 class="title">ADVERSTISING</h6>
+                                <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                            </div>
+                        </div>    
+                    </div>              
+                </div> 
+                <div class="col-md-6 col-lg-4 web">
+                    <div class="portfolio-item">
+                        <img src="/static/assets/imgs/web-4.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
+                        <div class="content-holder">
+                            <a class="img-popup" href="/static/assets/imgs/web-4.jpg"></a>
+                            <div class="text-holder">
+                                <h6 class="title">WEB</h6>
+                                <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                            </div>
+                        </div>
+                    </div>                                                     
+                </div>
+
+                <div class="col-md-6 col-lg-4 advertising"> 
+                    <div class="portfolio-item">
+                        <img src="/static/assets/imgs/advertising-1.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">                               
+                        <div class="content-holder">
+                            <a class="img-popup" href="/static/assets/imgs/advertising-1.jpg"></a>
+                            <div class="text-holder">
+                                <h6 class="title">ADVERSITING</h6>
+                                <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                            </div>
+                        </div>
+                    </div>                                                       
+                </div> 
+                <div class="col-md-6 col-lg-4 web new">
+                    <div class="portfolio-item">
+                        <img src="/static/assets/imgs/web-3.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">  
+                       <div class="content-holder">
+                            <a class="img-popup" href="/static/assets/imgs/web-3.jpg"></a>
+                            <div class="text-holder">
+                                <h6 class="title">WEB</h6>
+                                <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                            </div>
+                        </div>
+                    </div>                                                     
+                </div>
+                <div class="col-md-6 col-lg-4 advertising new">
+                    <div class="portfolio-item">
+                        <img src="/static/assets/imgs/advertising-3.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">       
+                       <div class="content-holder">
+                            <a class="img-popup" href="/static/assets/imgs/advertising-3.jpg"></a>
+                            <div class="text-holder">
+                                <h6 class="title">ADVERSITING</h6>
+                                <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                            </div>
+                        </div>
+                    </div>                                                       
+                </div> 
+                <div class="col-md-6 col-lg-4 advertising new"> 
+                    <div class="portfolio-item">
+                        <img src="/static/assets/imgs/advertising-4.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">            
+                        <div class="content-holder">
+                            <a class="img-popup" href="/static/assets/imgs/advertising-4.jpg"></a>
+                            <div class="text-holder">
+                                <h6 class="title">ADVERTISING</h6>
+                                <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                            </div>
+                        </div>
+                    </div>
+                            
+                </div> 
+                <div class="col-md-6 col-lg-4 branding new">
+                    <div class="portfolio-item">
+                        <img src="/static/assets/imgs/branding-1.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">                        
+                        <div class="content-holder">
+                            <a class="img-popup" href="/static/assets/imgs/branding-1.jpg"></a>
+                            <div class="text-holder">
+                                <h6 class="title">BRANDING</h6>
+                                <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div> 
+                <div class="col-md-6 col-lg-4 branding">
+                    <div class="portfolio-item">
+                        <img src="/static/assets/imgs/branding-2.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">  
+                        <div class="content-holder">
+                            <a class="img-popup" href="/static/assets/imgs/branding-2.jpg"></a>
+                            <div class="text-holder">
+                                <h6 class="title">BRANDING</h6>
+                                <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                            </div>
+                        </div>
+                    </div>                                                     
+                </div> 
+                <div class="col-md-6 col-lg-4 branding new">
+                    <div class="portfolio-item">
+                        <img src="/static/assets/imgs/branding-3.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">   
+                        <div class="content-holder">
+                            <a class="img-popup" href="/static/assets/imgs/branding-3.jpg"></a>
+                            <div class="text-holder">
+                                <h6 class="title">BRANDING</h6>
+                                <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                            </div>
+                        </div>
+                    </div>                                                    
+                </div> 
+                <div class="col-md-6 col-lg-4 branding">
+                    <div class="portfolio-item">
+                        <img src="/static/assets/imgs/branding-4.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">                      
+                        <div class="content-holder">
+                            <a class="img-popup" href="/static/assets/imgs/branding-4.jpg"></a>
+                            <div class="text-holder">
+                                <h6 class="title">BRANDING</h6>
+                                <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                            </div>
+                        </div>
+                    </div>                                                      
+                </div> 
+                <div class="col-md-6 col-lg-4 branding">
+                    <div class="portfolio-item">
+                        <img src="/static/assets/imgs/branding-5.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">          
+                        <div class="content-holder">
+                            <a class="img-popup" href="/static/assets/imgs/branding-5.jpg"></a>
+                            <div class="text-holder">
+                                <h6 class="title">BRANDING</h6>
+                                <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                            </div>
+                        </div>
+                    </div>                                                   
+                </div>
+            </div>   
+        </div>            
+    </section>
+    <!-- End of portfolio section -->
+
+    <!-- Blog Section -->
+    <section class="section" id="blog">
+        <div class="container">
+            <h6 class="section-title mb-0 text-center">Latest Articles</h6>
+            <h6 class="section-subtitle mb-5 text-center">Architecto provident deserunt eveniet libero</h6>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card border-0 mb-4">
+                        <img src="/static/Images/1.jpg" alt="" class="card-img-top w-100">
+                        <div class="card-body">                         
+                            <h6 class="card-title">Pariatur Omnis Harum quae sint.</h6>
+                            <p>Fuga quae ratione inventore Perferendis porro.</p>
+                            <a href="javascript:void(0)" class="small text-muted">Go To The Article</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 mb-4">
+                        <img src="/static/Images/2.jpg" alt="" class="card-img-top w-100">
+                        <div class="card-body">                         
+                            <h6 class="card-title"> Harum Quae Porro</h5>
+                            <p>Fuga quae ratione inventore Perferendis porro.</p>
+                            <a href="javascript:void(0)" class="small text-muted">Go To The Article</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 mb-4">
+                        <img src="/static/Images/3.jpg" alt="" class="card-img-top w-100">
+                        <div class="card-body">                         
+                            <h6 class="card-title">Qui optio neque alias</h6>
+                            <p>Fuga quae ratione inventore Perferendis porro.</p>
+                            <a href="javascript:void(0)" class="small text-muted">Go To The Article</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Blog Section -->
+
+    <!-- Testmonial Section -->
+    <section class="section" id="testmonial">
+        <div class="container">
+            <h6 class="section-title text-center mb-0">Testmonials</h6>
+            <h6 class="section-subtitle mb-5 text-center">What Our Clients Says</h6>
+            <div class="row">
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="media align-items-center mb-3">
+                                <img class="mr-3" src="/static/assets/imgs/avatar.jpg" alt="">
+                                <div class="media-body">
+                                    <h6 class="mt-1 mb-0">Nikhil Tripathi</h6>
+                                    <small class="text-muted mb-0">IpSoft Global Services</small>     
+                                </div>
+                            </div>
+                            <p class="mb-0">I have got so much support by Freshersworld to get offered in Extrieve Technologies with more exposu...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="media align-items-center mb-3">
+                                <img class="mr-3" src="/static/assets/imgs/avatar-1.jpg" alt="">
+                                <div class="media-body">
+                                    <h6 class="mt-1 mb-0">Maria Garcia</h6>
+                                    <small class="text-muted mb-0">PowerSchool</small>      
+                                </div>
+                            </div>
+                            <p class="mb-0">Talented people will be surely placed through FreshersWorld. ...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="media align-items-center mb-3">
+                                <img class="mr-3" src="/static/assets/imgs/avatar-2.jpg" alt="">
+                                <div class="media-body">
+                                    <h6 class="mt-1 mb-0">Mason Miller</h6>
+                                    <small class="text-muted mb-0">Residential Appraiser</small>        
+                                </div>
+                            </div>
+                            <p class="mb-0">I sincerely thank freshersworld.com for helping me find a job at Toshiba (TSIP),one of the largest ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Testmonial Section -->
+
+        
+</body>
+</html>
+{%endblock%}

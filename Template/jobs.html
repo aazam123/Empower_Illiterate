@@ -1,0 +1,313 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with LeadMark landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Home page | Empower</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="/static/assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + LeadMark main styles -->
+	<link rel="stylesheet" href="/static/assets/css/leadmark.css">
+    <style>
+        .search {
+  margin: 16px auto;
+  padding: 16px 64px 24px 64px;
+  background-color: var(--search-bg);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.search h2 {
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.search form {
+  text-align: center;
+  font-size: 16px;
+}
+
+.search input {
+  font: inherit;
+  padding: 8px;
+  width: 40%;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  margin-right: 4px;
+}
+
+.search button {
+  font: inherit;
+  padding: 8px 16px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--search-button-bg);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.listings {
+  background-color: #fff;
+  padding: 24px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.listings__heading {
+  font-size: 16px;
+  color: #222;
+  margin-bottom: 16px;
+}
+
+.listings__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 8px;
+  grid-row-gap: 24px;
+}
+
+.card {
+background-color: white;
+padding: 16px;
+border: solid 1px #ccc;
+max-width: 260px;
+border-radius: 2px;
+}
+
+.card__logo {
+  border-radius: 2px;
+  height: 64px;
+  width: 64px;
+  margin: 4px 0;
+}
+
+.card__heading {
+  color: #222;
+  font-weight: bold;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.card__text {
+  color: #666;
+  font-size: 14px;
+}
+
+.card__text--small {
+  font-size: 12px;
+}
+
+.card__separator {
+  width: 32px;
+  border: none;
+  border-top: 1px solid #ccc;
+  height: 1px;
+  margin: 8px 0;
+}
+.header {
+  background: url('/static/assets/imgs/banner.JPG') no-repeat center center fixed;
+}
+
+
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+    </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- page Navigation -->
+    <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/static/assets/imgs/logo.svg" alt="">
+            </a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">                     
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jobs">Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jobseeker">Jobseeker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/employers">Employers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contacts">Contact Us</a>
+                    </li>
+                     <!-- drop down -->
+                     <div class="nav-item dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><button style="background-color: rgb(163, 99, 39); color: rgb(230, 233, 233);">{{user}}</button>  <b class="caret"></b></a>
+                        <div class="dropdown-menu">
+                            <a href="/updateprofile" class="dropdown-item"><i class="fa fa-user-o"></i>Update Profile</a>
+                            <a href="/userlogout" class="dropdown-item"><i class="fa fa-calendar-o"></i>Logout</a>
+                        </div>
+                    </div>
+                    <!-- drop ended -->
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Of Second Navigation -->
+
+    <!-- Page Header -->
+    <header class="header">
+        <div class="overlay">
+            <h1 class="subtitle"></h1>
+            <h1 class="title">Jobs</h1>  
+        </div>  
+        <div class="shape">
+            <svg viewBox="0 0 1500 200">
+                <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z"/>
+            </svg>
+        </div>  
+        <div class="mouse-icon"><div class="wheel"></div></div>
+    </header>
+    <!-- End Of Page Header -->
+    <center><a href="/useraddjobs"><button class="btn btn-primary" style="color: rgb(224, 215, 215); background-color: rgb(27, 143, 221);">User Post Job</button></a></center>
+
+<!-- Jobs Code -->
+<!-- <section class="search container">
+    <h2>Search for your next job</h2>
+    {% for data in dataset %}.
+    <form action="" method="get">
+      <input type="text" name="company" placeholder="Search by title, skill, or company" />
+      <input type="text" name="address" placeholder="City, state, or zip code" />
+      <button class="btn btn-primary" style="color: #222;">Search</button>
+    </form>
+    {% endfor %}
+  </section>  -->
+  
+  <section class="listings container">
+    <h3 class="listings__heading">Based on your profile</h3>
+    <ul class="listings__grid"> 
+      {% for st in stdata %}
+      <li class="card">
+        <img src="{{ BASIC_DIR }}/User/{{st.companylogo}}" alt="" class="card__logo" />
+        <div class="card__heading">{{st.jobtitle}}</div>
+        <div class="card__text">{{st.companyname}}</div>
+        <div class="card__text">{{st.city}}</div>
+        <div class="card__text card__text--small">{{st.description}}</div>
+        <hr class="card__separator" />
+        <div class="card__text card__text--small">6 days ago</div>
+        <a href="/apply/{{st.id}}" ><button class="job-card-menu-btn">Apply</button></a>
+      </li>
+      {% endfor %}
+      <!-- <li class="card">
+        <img src="https://logo.clearbit.com/amazon.com" alt="" class="card__logo" />
+        <div class="card__heading">Senior Software Engineer</div>
+        <div class="card__text">Amazon</div>
+        <div class="card__text">Hyderabad, IN</div>
+        <div class="card__text card__text--small">9 connections</div>
+        <hr class="card__separator" />
+        <div class="card__text card__text--small">6 days ago</div>
+         <button class="job-card-menu-btn">Apply</button> 
+      </li>
+      <li class="card">
+        <img src="https://logo.clearbit.com/tcs.com" alt="" class="card__logo" />
+        <div class="card__heading">Web Developer</div>
+        <div class="card__text">TCS</div>
+        <div class="card__text">Bangalore, IN</div>
+        <div class="card__text card__text--small">9 connections</div>
+        <hr class="card__separator" />
+        <div class="card__text card__text--small">6 days ago</div>
+        <button class="job-card-menu-btn">Apply</button> 
+      </li>
+      <li class="card">
+        <img src="https://images.ctfassets.net/37l920h5or7f/4DoCMtDHIs8WMMyu06eYM2/c6d3263dce37657cbdd44224f1f79a0d/Uber-Asset-Logo-18.jpg?fm=jpg&q=70&w=1600" alt="" class="card__logo" />
+        <div class="card__heading">Software Engineer</div>
+        <div class="card__text">Uber</div>
+        <div class="card__text">Delhi, IN</div>
+        <div class="card__text card__text--small">9 connections</div>
+        <hr class="card__separator" />
+        <div class="card__text card__text--small">6 days ago</div>
+        <button class="job-card-menu-btn">Apply</button> 
+      </li>
+      <li class="card">
+        <img src="https://via.placeholder.com/64" alt="" class="card__logo" />
+        <div class="card__heading">Software Engineer</div>
+        <div class="card__text">Microsoft</div>
+        <div class="card__text">Hyderabad, IN</div>
+        <div class="card__text card__text--small">9 connections</div>
+        <hr class="card__separator" />
+        <div class="card__text card__text--small">6 days ago</div>
+        <button class="job-card-menu-btn">Apply</button> 
+      </li>
+      <li class="card">
+        <img src="https://via.placeholder.com/64" alt="" class="card__logo" />
+        <div class="card__heading">Software Engineer</div>
+        <div class="card__text">AMD</div>
+        <div class="card__text">Hyderabad, IN</div>
+        <div class="card__text card__text--small">9 connections</div>
+        <hr class="card__separator" />
+        <div class="card__text card__text--small">6 days ago</div>
+        <button class="job-card-menu-btn">Apply</button> 
+      </li>
+      <li class="card">
+        <img src="https://via.placeholder.com/64" alt="" class="card__logo" />
+        <div class="card__heading">Software Engineer</div>
+        <div class="card__text">Microsoft</div>
+        <div class="card__text">Hyderabad, IN</div>
+        <div class="card__text card__text--small">9 connections</div>
+        <hr class="card__separator" />
+        <div class="card__text card__text--small">6 days ago</div>
+        <button class="job-card-menu-btn">Apply</button> 
+      </li>
+      <li class="card">
+        <img src="https://via.placeholder.com/64" alt="" class="card__logo" />
+        <div class="card__heading">Software Engineer</div>
+        <div class="card__text">Microsoft</div>
+        <div class="card__text">Hyderabad, IN</div>
+        <div class="card__text card__text--small">9 connections</div>
+        <hr class="card__separator" />
+        <div class="card__text card__text--small">6 days ago</div>
+        <button class="job-card-menu-btn">Apply</button> 
+      </li>
+      <li class="card">
+        <img src="https://via.placeholder.com/64" alt="" class="card__logo" />
+        <div class="card__heading">Software Engineer</div>
+        <div class="card__text">Microsoft</div>
+        <div class="card__text">Hyderabad, IN</div>
+        <div class="card__text card__text--small"></div>
+        <div class="card__text card__text--small">9 connections</div>
+        <hr class="card__separator" />
+        
+        <button class="job-card-menu-btn">Apply</button> 
+      </li> -->
+    </ul>
+  </section>
+<!-- job endeed -->
+
+</body>
+</html>
+{% endblock %}

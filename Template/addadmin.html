@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width,
+				initial-scale=1.0">
+	<title>Empower Admin</title>
+	<style>
+/* Main CSS Here */
+
+@import url(
+"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+}
+:root {
+--background-color1: #fafaff;
+--background-color2: #ffffff;
+--background-color3: #ededed;
+--background-color4: #cad7fda4;
+--primary-color: #4b49ac;
+--secondary-color: #0c007d;
+--Border-color: #3f0097;
+--one-use-color: #3f0097;
+--two-use-color: #5500cb;
+}
+body {
+background-color: var(--background-color4);
+max-width: 100%;
+overflow-x: hidden;
+}
+
+header {
+height: 70px;
+width: 100vw;
+padding: 0 30px;
+background-color: var(--background-color1);
+position: fixed;
+z-index: 100;
+box-shadow: 1px 1px 15px rgba(161, 182, 253, 0.825);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-size: 27px;
+font-weight: 600;
+color: rgb(47, 141, 70);
+}
+
+.icn {
+height: 30px;
+}
+.menuicn {
+cursor: pointer;
+}
+
+.searchbar,
+.message,
+.logosec {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.searchbar2 {
+display: none;
+}
+
+.logosec {
+gap: 60px;
+}
+
+.searchbar input {
+width: 250px;
+height: 42px;
+border-radius: 50px 0 0 50px;
+background-color: var(--background-color3);
+padding: 0 20px;
+font-size: 15px;
+outline: none;
+border: none;
+}
+.searchbtn {
+width: 50px;
+height: 42px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 0px 50px 50px 0px;
+background-color: var(--secondary-color);
+cursor: pointer;
+}
+
+.message {
+gap: 40px;
+position: relative;
+cursor: pointer;
+}
+.circle {
+height: 7px;
+width: 7px;
+position: absolute;
+background-color: #fa7bb4;
+border-radius: 50%;
+left: 19px;
+top: 8px;
+}
+.dp {
+height: 40px;
+width: 40px;
+background-color: #626262;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+}
+.main-container {
+display: flex;
+width: 100vw;
+position: relative;
+top: 70px;
+z-index: 1;
+}
+.dpicn {
+height: 42px;
+}
+
+.main {
+height: calc(100vh - 70px);
+width: 100%;
+overflow-y: scroll;
+overflow-x: hidden;
+padding: 40px 30px 30px 30px;
+}
+
+.main::-webkit-scrollbar-thumb {
+background-image:
+		linear-gradient(to bottom, rgb(0, 0, 85), rgb(0, 0, 50));
+}
+.main::-webkit-scrollbar {
+width: 5px;
+}
+.main::-webkit-scrollbar-track {
+background-color: #9e9e9eb2;
+}
+
+.box-container {
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+flex-wrap: wrap;
+gap: 50px;
+}
+.nav {
+min-height: 91vh;
+width: 250px;
+background-color: var(--background-color2);
+position: absolute;
+top: 0px;
+left: 00;
+box-shadow: 1px 1px 10px rgba(198, 189, 248, 0.825);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+overflow: hidden;
+padding: 30px 0 20px 10px;
+}
+.navcontainer {
+height: calc(100vh - 70px);
+width: 250px;
+position: relative;
+overflow-y: scroll;
+overflow-x: hidden;
+transition: all 0.5s ease-in-out;
+}
+.navcontainer::-webkit-scrollbar {
+display: none;
+}
+.navclose {
+width: 80px;
+}
+.nav-option {
+width: 250px;
+height: 60px;
+display: flex;
+align-items: center;
+padding: 0 30px 0 20px;
+gap: 20px;
+transition: all 0.1s ease-in-out;
+}
+.nav-option:hover {
+border-left: 5px solid #a2a2a2;
+background-color: #dadada;
+cursor: pointer;
+}
+.nav-img {
+height: 30px;
+}
+
+.nav-upper-options {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 30px;
+}
+
+.option1 {
+border-left: 5px solid #010058af;
+background-color: var(--Border-color);
+color: white;
+cursor: pointer;
+}
+.option1:hover {
+border-left: 5px solid #010058af;
+background-color: var(--Border-color);
+}
+.box {
+height: 130px;
+width: 230px;
+border-radius: 20px;
+box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
+padding: 20px;
+display: flex;
+align-items: center;
+justify-content: space-around;
+cursor: pointer;
+transition: transform 0.3s ease-in-out;
+}
+.box:hover {
+transform: scale(1.08);
+}
+
+.box:nth-child(1) {
+background-color: var(--one-use-color);
+}
+.box:nth-child(2) {
+background-color: var(--two-use-color);
+}
+.box:nth-child(3) {
+background-color: var(--one-use-color);
+}
+.box:nth-child(4) {
+background-color: var(--two-use-color);
+}
+
+.box img {
+height: 50px;
+}
+.box .text {
+color: white;
+}
+.topic {
+font-size: 13px;
+font-weight: 400;
+letter-spacing: 1px;
+}
+
+.topic-heading {
+font-size: 30px;
+letter-spacing: 3px;
+}
+
+.report-container {
+min-height: 300px;
+max-width: 1200px;
+margin: 70px auto 0px auto;
+background-color: #ffffff;
+border-radius: 30px;
+box-shadow: 3px 3px 10px rgb(188, 188, 188);
+padding: 0px 90px 20px 20px;
+}
+.report-header {
+height: 80px;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 20px 20px 10px 20px;
+border-bottom: 2px solid rgba(0, 20, 151, 0.59);
+}
+
+.recent-Articles {
+font-size: 30px;
+font-weight: 600;
+color: #5500cb;
+}
+
+.view {
+height: 35px;
+width: 90px;
+border-radius: 8px;
+background-color: #5500cb;
+color: white;
+font-size: 15px;
+border: none;
+cursor: pointer;
+}
+
+.report-body {
+max-width: 1160px;
+overflow-x: auto;
+padding: 20px;
+}
+.report-topic-heading,
+.item1 {
+width: 1120px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.t-op {
+font-size: 18px;
+letter-spacing: 0px;
+}
+/* Add  */
+
+form {
+  --background: white;
+  --border: rgba(0, 0, 0, 0.125);
+  --borderDark: rgba(0, 0, 0, 0.25);
+  --borderDarker: rgba(0, 0, 0, 0.5);
+  --bgColorH: 0;
+  --bgColorS: 0%;
+  --bgColorL: 98%;
+  --fgColorH: 210;
+  --fgColorS: 50%;
+  --fgColorL: 38%;
+  --shadeDark: 0.3;
+  --shadeLight: 0.7;
+  --shadeNormal: 0.5;
+  --borderRadius: 0.125rem;
+  --highlight: #306090;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--borderRadius);
+  box-shadow: 0 1rem 1rem -0.75rem var(--border);
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+form .email, form .email a {
+  color: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
+  font-size: 0.825rem;
+  order: 4;
+  text-align: center;
+  margin-top: 0.25rem;
+  outline: 1px dashed transparent;
+  outline-offset: 2px;
+  display: inline;
+}
+
+form a:hover {
+  color: hsl(var(--fgColorH), var(--fgColorS), calc(var(--fgColorL) * 0.85));
+  transition: color 0.25s;
+}
+
+form a:focus {
+  color: hsl(var(--fgColorH), var(--fgColorS), calc(var(--fgColorL) * 0.85));
+  outline: 1px dashed hsl(var(--fgColorH), calc(var(--fgColorS) * 2), calc(var(--fgColorL) * 1.15));
+  outline-offset: 2px;
+}
+
+form > div {
+  order: 2;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-show-password {
+  order: 3;
+}
+
+label > span {
+  color: var(--borderDarker);
+  display: block;
+  font-size: 0.825rem;
+  margin-top: 0.625rem;
+  order: 1;
+  transition: all 0.25s;
+}
+
+label > span.required::after {
+  content: "*";
+  color: #dd6666;
+  margin-left: 0.125rem;
+}
+
+label input {
+  order: 2;
+  outline: none;
+}
+
+label input::placeholder {
+  color: var(--borderDark);
+}
+
+/* trick from https://css-tricks.com/snippets/css/password-input-bullet-alternatives/ */
+label input[name="password"] {
+  -webkit-text-security: disc;
+}
+
+input[name="show-password"]:checked ~ div label input[name="password"] {
+  -webkit-text-security: none;
+}
+
+label:hover span {
+  color: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
+}
+
+input[type="checkbox"] + div label:hover span::before,
+label:hover input.text {
+  border-color: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
+}
+
+label input.text:focus,
+label input.text:active {
+  border-color:  hsl(var(--fgColorH), calc(var(--fgColorS) * 2), calc(var(--fgColorL) * 1.15));
+  box-shadow: 0 1px  hsl(var(--fgColorH), calc(var(--fgColorS) * 2), calc(var(--fgColorL) * 1.15));
+}
+
+input.text:focus + span,
+input.text:active + span {
+  color:  hsl(var(--fgColorH), calc(var(--fgColorS) * 2), calc(var(--fgColorL) * 1.15));
+}
+
+input {
+  border: 1px solid var(--border);
+  border-radius: var(--borderRadius);
+  box-sizing: border-box;
+  font-size: 1rem;
+  height: 2.25rem;
+  line-height: 1.25rem;
+  margin-top: 0.25rem;
+  order: 2;
+  padding: 0.25rem 0.5rem;
+  width: 15rem;
+  transition: all 0.25s;
+}
+
+input[type="submit"] {
+  color: hsl(var(--bgColorH), var(--bgColorS), var(--bgColorL));
+  background: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-top: 0.625rem;
+  order: 4;
+  outline: 1px dashed transparent;
+  outline-offset: 2px;
+  padding-left: 0;
+  text-transform: uppercase;
+}
+
+input[type="checkbox"]:focus + label span::before,
+input[type="submit"]:focus {
+  outline: 1px dashed hsl(var(--fgColorH), calc(var(--fgColorS) * 2), calc(var(--fgColorL) * 1.15));
+  outline-offset: 2px;
+}
+
+input[type="submit"]:focus {
+  background: hsl(var(--fgColorH), var(--fgColorS), calc(var(--fgColorL) * 0.85));
+}
+
+input[type="submit"]:hover {
+  background: hsl(var(--fgColorH), var(--fgColorS), calc(var(--fgColorL) * 0.85));
+}
+
+input[type="submit"]:active {
+  background: hsl(var(--fgColorH), calc(var(--fgColorS) * 2), calc(var(--fgColorL) * 1.15));
+  transition: all 0.125s;
+}
+
+/** Checkbox styling */
+.a11y-hidden {
+  position: absolute;
+  top: -1000em;
+  left: -1000em;
+}
+
+input[type="checkbox"] + label span {
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+input[type="checkbox"] + label span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid var(--borderDark);
+  border-radius: var(--borderRadius);
+  transition: all 0.25s;
+  outline:1px dashed transparent;
+  outline-offset: 2px;
+}
+
+input[type="checkbox"]:checked + label span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  width: 0.375rem;
+  height: 0.375rem;
+  border: 1px solid var(--borderDark);
+  border-radius: var(--borderRadius);
+  transition: all 0.25s;
+  outline:1px dashed transparent;
+  outline-offset: 2px;
+  background: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
+}
+
+/** PERSON */
+figure {
+  --skinH: 30;
+  --skinS: 100%;
+  --skinL: 87%;
+  --hair: rgb(180,70,60);
+  background: hsl(var(--fgColorH), calc(var(--fgColorS) * 2), 95%);
+  border: 1px solid rgba(0,0,0,0.0625);
+  border-radius: 50%;
+  height: 0;
+  margin: auto auto;
+  margin-bottom: 2rem;
+  order: 1;
+  padding-top: 60%;
+  position: relative;
+  width: 60%;
+  overflow: hidden;
+}
+
+figure div {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+figure .skin {
+  background: hsl(var(--skinH), var(--skinS), var(--skinL));
+  box-shadow: inset 0 0 3rem hsl(var(--skinH), var(--skinS), calc(var(--skinL) * 0.95));
+}
+
+figure .head {
+  top: 40%;
+  left: 50%;
+  width: 60%;
+  height: 60%;
+  border-radius: 100%;
+  box-shadow: 0 -0.175rem 0 0.125rem var(--hair);
+}
+
+figure  .ears {
+  top: 47%;
+  left: 50%;
+  white-space: nowrap;
+}
+
+figure .ears::before,
+figure .ears::after {
+  content: "";
+  background: hsl(var(--skinH), var(--skinS), var(--skinL));
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  margin: 0 2.1rem;
+}
+
+figure .head .eyes {
+  top: 55%;
+  left: 50%;
+  white-space: nowrap;
+}
+
+@-webkit-keyframes blink {
+  0%, 90%, 100% {
+    height: 10px;
+  }
+  95% {
+    height: 0;
+  }
+}
+
+@keyframes blink {
+  0%, 90%, 100% {
+    height: 10px;
+  }
+  95% {
+    height: 0px;
+  }
+}
+
+figure .head .eyes::before,
+figure .head .eyes::after {
+  content: "";
+  background: var(--borderDarker);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin: 0 0.5rem;
+  -webkit-animation: blink 5s infinite;
+  animation: blink 5s infinite;
+  transition: all 0.15s;
+}
+
+input[name="show-password"]:checked ~ figure .head .eyes::before,
+input[name="show-password"]:checked ~ figure .head .eyes::after {
+  height: 0.125rem;
+  animation: none;
+}
+
+figure .head .mouth {
+  border: 0.125rem solid transparent;
+  border-bottom: 0.125rem solid var(--borderDarker);
+  width: 25%;
+  border-radius: 50%;
+  transition: all 0.5s
+}
+
+form:invalid figure .head .mouth {
+  top: 75%;
+  left: 50%;
+  height: 10%;
+}
+
+form:valid figure .head .mouth {
+  top: 60%;
+  left: 50%;
+  width: 40%;
+  height: 40%;
+}
+
+figure .hair {
+  top: 40%;
+  left: 50%;
+  width: 66.66%;
+  height: 66.66%;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+figure .hair::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--hair);
+  border-radius: 50%;
+  top: -60%;
+  left: -50%;
+  box-shadow: 4rem 0 var(--hair);
+}
+
+figure .neck {
+  width: 10%;
+  height: 40%;
+  top: 62%;
+  left: 50%;
+  background: hsl(var(--skinH), var(--skinS), calc(var(--skinL) * 0.94));
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 0.25rem var(--border);
+}
+
+figure .person-body {
+  width: 60%;
+  height: 100%;
+  border-radius: 50%;
+  background: red;
+  left: 50%;
+  top: 126%;
+  background: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
+}
+
+figure .shirt-1,
+figure .shirt-2 {
+  width: 12%;
+  height: 7%;
+  background: hsl(var(--bgColorH), var(--bgColorS), var(--bgColorL));
+  top: 76%;
+  left: 36.5%;
+  transform: skew(-10deg) rotate(15deg)
+}
+
+figure .shirt-2 {
+  left: 52.5%;
+  transform: skew(10deg) rotate(-15deg)
+}
+/* table */
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    padding: 30px 0;
+}
+
+/* Table Styles */
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2804aa;
+  color: white;
+}
+.button {
+  background-color: #008CBA; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+    </style>
+</head>
+
+<body>
+
+	<!-- for header part -->
+	<header>
+
+		<div class="logosec">
+			<div class="logo">Empower Admin</div>
+			<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+				class="icn menuicn"
+				id="menuicn"
+				alt="menu-icon">
+		</div>
+
+		<div class="searchbar">
+			<a href="/adminshowstudent"><button class="button" >Basic Detatis User</button></a>
+			</div>
+		</div>
+
+		<div class="message">
+			<div class="circle"></div>
+			<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
+				class="icn"
+				alt="">
+			
+				<button class="button button2">{{user}}</button>
+			
+		</div>
+`	
+	</header>
+
+	<div class="main-container">
+		<div class="navcontainer" style="height: 622px;">
+			<nav class="nav">
+				<div class="nav-upper-options">
+					<a href="/adminhome"><div class="nav-option option1">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+							class="nav-img"
+							alt="dashboard">
+						<h3> Dashboard</h3>
+					</div></a>
+
+
+                    <a href="/adminaddjobs"><div class="nav-option option4">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
+							class="nav-img" 
+							alt="institution">
+						<h3 href="/adminaddjobs"> Add Jobs</h3>
+					</div></a>
+
+
+					<a href="/addadmin"><div class="option2 nav-option">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
+							class="nav-img"
+							alt="articles">
+						<h3> Add Admin</h3>
+					</div></a>
+
+					<a href="/adminprofile"><div class="nav-option option5">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
+							class="nav-img"
+							alt="blog">
+						<h3> Profile</h3>
+					</div></a>
+
+					<!-- <div class="nav-option option6">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
+							class="nav-img"
+							alt="settings">
+						<h3> Settings</h3>
+					</div> -->
+
+					<a href="/adminshowjobs"><div class="nav-option option6">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
+							class="nav-img"
+							alt="settings">
+						<h3> Show Jobs</h3>
+					</div></a>
+
+
+          <!-- <a href="/adminshowstudent"><div class="nav-option option6">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+							class="nav-img"
+							alt="dashboard">
+						<h3>ShowStudent</h3>
+					</div></a>
+
+					<a href="/adminshowfeedback"><div class="option2 nav-option">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
+							class="nav-img"
+							alt="articles">
+						<h3>Show Feedback</h3>
+					</div></a>
+
+					<a href="/adminshowemployerdetails"><div class="nav-option option6">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+							class="nav-img"
+							alt="dashboard">
+						<h3> Show Employers Details</h3>
+					</div></a>
+
+          <a href="/showcontact">
+						<div class="nav-option option5">
+							<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
+								class="nav-img" alt="blog">
+							<h3> Show Contact</h3>
+						</div>
+					</a> -->
+
+
+
+					<a href="/userlogout"><div class="nav-option logout">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
+							class="nav-img"
+							alt="logout">
+						<h3>Logout</h3>
+					</div></a>
+
+				</div>
+			</nav>
+		</div>
+		<!-- Add admin -->
+		<form method="post" id="login-form" class="login-form" autocomplete="off" role="main">
+			{% csrf_token %}
+			<h1 class="a11y-hidden">Admin Add Form</h1>
+			<div>
+			  <label class="label-email">
+				<input type="text" class="text" name="fname" placeholder="Enter Admin Name" tabindex="1" required />
+				<span class="required">Name</span>
+			  </label>
+			  <label class="label-email">
+				<input type="email" class="text"  name="email" placeholder="Enter Admin Email" tabindex="1" required />
+				<span class="required">Email</span>
+			  </label>
+			  <label class="label-email">
+				<input type="number" class="text" name="mobile" placeholder="Enter Admin Number" tabindex="1" required />
+				<span class="required">Mobile</span>
+			  </label>
+			</div>
+			<input type="checkbox" name="show-password" class="show-password a11y-hidden" id="show-password" tabindex="3" />
+			<label class="label-show-password" for="show-password">
+			  <span>Show Password</span>
+			</label>
+			<div>
+			  <label class="label-password">
+				<input type="text" class="text" name="password" placeholder="Enter Admin Password" tabindex="2" required />
+				<span class="required">Password</span>
+			  </label>
+			</div>
+			<input type="submit" value="Add Admin" />
+			<div class="email">
+			
+			</div>
+			<figure aria-hidden="true">
+			  <div class="person-body"></div>
+			  <div class="neck skin"></div>
+			  <div class="head skin">
+				<div class="eyes"></div>
+				<div class="mouth"></div>
+			  </div>
+			  <div class="hair"></div>
+			  <div class="ears"></div>
+			  <div class="shirt-1"></div>
+			  <div class="shirt-2"></div>
+			</figure>
+		  </form><br>
+		  <table id="customers">
+			<tr>
+			  <th>Name</th>
+			  <th>Email</th>
+			  <th>Mobile</th>
+			  <th>Password</th>
+			  <th>Action</th>
+
+			</tr>
+			{% for st in stdata %}
+			<tr>
+			  <td>{{st.fname}}</td>
+			  <td>{{st.email}}</td>
+			  <td>{{st.mobile}}</td>
+			  <td>{{st.password}}</td>
+			  <td><a href="/delete/{{st.id}}" >Delete</a></td>
+			</tr>
+			{% endfor %}
+		  </table>
+		  
+		
+	</div>
+
+        <script>
+        let menuicn = document.querySelector(".menuicn");
+        let nav = document.querySelector(".navcontainer");
+
+        menuicn.addEventListener("click",()=>
+        {
+            nav.classList.toggle("navclose");
+        })
+        </script>
+
+</body>
+</html>

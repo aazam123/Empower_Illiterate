@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with LeadMark landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Home page | Empower</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="/static/assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + LeadMark main styles -->
+	<link rel="stylesheet" href="/static/assets/css/leadmark.css">
+    <style>
+        /* Add padding to containers */
+        
+        /* Full-width input fields */
+        input[type=text], input[type=password], input[type=email], input[type=number], select {
+          width: 100%;
+          padding: 15px;
+          margin: 5px 0 22px 0;
+          display: inline-block;
+          border: none;
+          background: #f1f1f1;
+        }
+        
+        input[type=text]:focus, input[type=password], input[type=email], input[type=number], select:focus {
+          background-color: #ddd;
+          outline: none;
+        }
+        
+        /* Overwrite default styles of hr */
+        hr {
+          border: 1px solid #f1f1f1;
+          margin-bottom: 25px;
+        }
+        
+        /* Set a style for the submit button */
+        .registerbtn {
+          background-color: #04AA6D;
+          color: white;
+          padding: 16px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+          opacity: 0.9;
+        }
+        
+        .registerbtn:hover {
+          opacity: 1;
+        }
+        
+        /* Add a blue text color to links */
+        a {
+          color: dodgerblue;
+        }
+        
+        /* Set a grey background color and center the text of the "sign in" section */
+        .signin {
+          background-color: #f1f1f1;
+          text-align: center;
+        }
+        .header {
+  background: url('/static/assets/imgs/banner.JPG') no-repeat center center fixed;
+}
+        </style>
+        
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- page Navigation -->
+    <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/static/assets/imgs/logo.svg" alt="">
+            </a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">                     
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jobs">Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jobseeker">Jobseeker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/employers">Employers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contacts">Contact Us</a>
+                    </li>
+                     <!-- drop down -->
+                     <div class="nav-item dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><button style="background-color: rgb(163, 99, 39); color: rgb(230, 233, 233);">{{user}}</button> <b class="caret"></b></a>
+                        <div class="dropdown-menu">
+                            <a href="/updateprofile" class="dropdown-item"><i class="fa fa-user-o"></i>Update Profile</a>
+                            <a href="/userlogout" class="dropdown-item"><i class="fa fa-calendar-o"></i>Logout</a>
+                        </div>
+                    </div>
+                    <!-- drop ended -->
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Of Second Navigation -->
+
+    <!-- Page Header -->
+    <header class="header">
+        <div class="overlay">
+            <h1 class="subtitle"></h1>
+            <h1 class="title">Jobseeker</h1>  
+        </div>  
+        <div class="shape">
+            <svg viewBox="0 0 1500 200">
+                <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z"/>
+            </svg>
+        </div>  
+        <div class="mouse-icon"><div class="wheel"></div></div>
+    </header>
+    <!-- End Of Page Header -->
+
+
+    <!-- Form Recevied Details -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="container">
+          <h1>Employers Details</h1>
+          <p>Please fill in this form to JobCard .</p>
+          <hr>
+        
+          <label for="email"><b>Name</b></label>
+          <input type="text" placeholder="Enter Name" name="name" id="email" required>
+
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="Enter Email"  name="email" id="email" required>
+        
+          <label for="email"><b>Mobile No.</b></label>
+          <input type="number" placeholder="Enter Mobile No." name="mobile" id="email" required>
+
+          <label for="email"><b>Skill</b></label>
+          <input type="text" placeholder="Enter Skill" name="skill" id="email" required>
+      
+          <label for="psw"><b>Hobbies</b></label>
+          <input type="text" placeholder="Enter Your Hobbies" name="hobbies" id="psw" required>
+
+          <label for="psw"><b>Address</b></label>
+          <input type="text" placeholder="Enter Your Address" name="address" id="psw" required>
+      
+          <!-- <label for="psw-repeat"><b>Experience</b></label>
+          <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required> -->
+
+
+          <select for="psw" name="experience">
+            <option value="Experience">Experience</option>
+            <option value="Fresher">Fresher</option>
+            <option value="WebDevloper">Web Devloper</option>
+            <option value="Digital Marketing">Digital Marketing</option>
+            <option value="Sales Man">Sales Man</option>
+            <option value="Printing Press">Printing Press</option>
+            <option value="Industrial Worker">Industrial Worker</option>
+            <option value="Bank">Bank</option>
+            <option value="It Zone">It Zone</option>
+            <option value="BusinessDevelopmentExecutive"> Business Development Executive</option>
+            <option value="Hacker">Hacker</option>
+            <option value="Telecaller">Telecaller</option>
+            <option value="other">other</option>
+          </select>
+
+          <hr>
+          <label for="psw-repeat"><b>Employers images</b></label>
+          <input type="file"  name="images" id="psw-repeat" required>
+
+          <label for="psw-repeat"><b> CV</b></label>
+         <input type="file"  name="cv" id="psw-repeat" required>
+      
+          <input type="submit" class="registerbtn" value="Submit Details">
+        </div>
+      </form>
+    <!-- Form Ended -->
+    
+
+
+</body>
+</html>
+{%endblock%}

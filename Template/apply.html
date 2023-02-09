@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], input[type=file],input[type=number], input[type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+<Center><h1>Job Apply </h1></Center>
+
+<div>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="country">Job Post Email</label>
+    <select id="country" name="userjobpost">
+      <option value="{{id.email}}">{{id.email}}</option>
+    </select>
+    <label for="lname"> Name</label>
+    <input type="text" id="lname" name="name" placeholder="Your last name..">
+
+    <label for="lname"> Email</label>
+    <input type="email" id="lname" name="email" placeholder="Your last Email..">
+
+    <label for="lname"> Mobile No.</label>
+    <input type="number" id="lname" name="mobile" placeholder="Your last Number..">
+
+    <label for="lname"> Address</label>
+    <input type="text" id="lname" name="address" placeholder="Your last name..">
+
+    <label for="lname"> City</label>
+    <input type="text" id="lname" name="city" placeholder="Your last City..">
+
+    <label for="lname"> CV</label>
+    <input type="file" id="lname" name="cv" >
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
+
+

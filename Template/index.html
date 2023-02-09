@@ -1,0 +1,225 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with LeadMark landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Home page | Empower</title>
+    <style>
+        .header {
+  background: url('/static/assets/imgs/banner.JPG') no-repeat center center fixed;
+}
+        body {
+  font-family: 'Ubuntu', sans-serif;
+  height:100vh;
+  background-color: #4158D0;
+background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+
+.dropbtn {
+  background-color: #4CAF50;
+  scroll-behavior: smooth;
+  color: white;
+  width: 825px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #4b524b;
+}
+.notice{
+    background-color: skyblue;
+    text-align: center;
+}
+
+    </style>
+    <!-- font icons -->
+    <link rel="stylesheet" href="/static/assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + LeadMark main styles -->
+	<link rel="stylesheet" href="/static/assets/css/leadmark.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- page Navigation -->
+    <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/static/assets/imgs/logo.svg" alt="">
+            </a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">                     
+                    <li class="nav-item">
+                        <a class="nav-link" href="#AreYouStudent">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#AreYouStudent">Jobseeker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#AreYouStudent">Employers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#AreYouStudent">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#AreYouStudent">Contact Us</a>
+                    </li>
+                    
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Of Second Navigation -->
+
+    <!-- Page Header -->
+    <header class="header">
+        <div class="overlay">
+            <h1 class="subtitle">LeadMark Landing Page</h1>
+            <h1 class="title">We Are Creative</h1>  
+        </div>  
+        <div class="shape">
+            <svg viewBox="0 0 1500 200">
+                <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z"/>
+            </svg>
+        </div>  
+        <div class="mouse-icon"><div class="wheel"></div></div>
+    </header>
+    <!-- End Of Page Header -->
+
+    <!-- Dropdown Page -->
+    <div class="dropdownList" style="display:flex;align-items:center;height:95%;justify-content:center;text-align:center;width:100%;">
+        <div class="dropdown" style="float:left;">
+            <button class="dropbtn" id="AreYouStudent">Are You Student / Admin</button>
+            <div class="dropdown-content" style="left:0;">
+            <a href="/studentlogin">Student</a>
+            <a href="/adminlogins">Admin</a>
+            </div>
+          </div>
+        </div>
+        <center><div style="background-color: red;color: white; margin-right: 325px; margin-left: 325px;">
+        <h2>!important Notice</h2>
+        <p>Hello User How Are You This Site is Very Usefull All Students.<br> Compalsary Jobseeker Form Fill Up All Student And <br>Show Job Card Very Usefull this Job Card<br> Permintant customer Our Portel Thank You..! Saporting and Read Notice<br>And Share Your Feedback</p>
+     </div></center>
+        <!-- Contact Section -->
+    <section id="contact" class="section has-img-bg pb-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 my-3">
+                    <h6 class="mb-0">Phone</h6>
+                    <p class="mb-4">+91 7228021405</p>
+
+                    <h6 class="mb-0">Address</h6>
+                    <p class="mb-4">Office No.206, Twinstar, Nanamava Road, Rajkot</p>
+
+                    <h6 class="mb-0">Email</h6>
+                    <p class="mb-0">empowerilliterate@gmail.com</p>
+                    <p></p>
+                </div>
+                <div class="col-md-7">
+                    <form method="post">
+                        {% csrf_token %}
+                        <h4 class="mb-4">Feedback</h4>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" placeholder="Enter Name" name="name" >
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <input type="email" class="form-control text-white rounded-0 bg-transparent" name="email" placeholder="Enter Email" >
+                            </div>
+                            
+                            <div class="form-group col-12">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" style="height: 100px;" name="message" placeholder="Enter Feedback">
+                            </div>
+                            <div class="form-group col-12 mb-0">
+                                <input type="submit" class="btn btn-primary rounded w-md mt-3" value="feedback" name="feedback">
+                            </div>                          
+                        </div>                          
+                    </form>
+                </div>
+            </div>
+            <!-- Page Footer -->
+            <footer class="mt-5 py-4 border-top border-secondary">
+                <p class="mb-0 small">&copy; <script>document.write(new Date().getFullYear())</script>, LeadMark Created By <a href="#" target="_blank">Aazam Morvadiya.</a>  All rights reserved </p>     
+            </footer>
+            <!-- End of Page Footer -->  
+        </div>
+    </section>
+	
+	<!-- core  -->
+    <script src="/static/assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="/static/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="/static/assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Isotope -->
+    <script src="/static/assets/vendors/isotope/isotope.pkgd.js"></script>
+
+    <!-- LeadMark js -->
+    <script src="/static/assets/js/leadmark.js"></script>
+    <script>
+      $(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('dropbtn').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+
+    </script>
+
+</body>
+</html>

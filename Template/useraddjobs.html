@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with LeadMark landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Home page | Empower</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="/static/assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + LeadMark main styles -->
+	<link rel="stylesheet" href="/static/assets/css/leadmark.css">
+    <style>
+         .header {
+  background: url('/static/assets/imgs/banner.JPG') no-repeat center center fixed;
+}
+/* form start */
+.center {
+  position: relative;
+  padding: 50px 50px;
+  background: #fff;
+  border-radius: 10px;
+  margin-left: 500px;
+}
+.center h1 {
+  font-size: 2em;
+  border-left: 5px solid dodgerblue;
+  padding: 10px;
+  color: #000;
+  letter-spacing: 5px;
+  margin-bottom: 60px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+.center .inputbox {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  margin-bottom: 50px;
+}
+.center .inputbox input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 2px solid #000;
+  outline: none;
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+select{
+	margin-bottom: 50px;
+	border: 2px solid #000;
+  outline: none;
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+.center .inputbox:last-child {
+  margin-bottom: 0;
+}
+.center .inputbox span {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  font-size: 1em;
+  transition: 0.6s;
+  font-family: sans-serif;
+}
+.center .inputbox input:focus ~ span,
+.center .inputbox input:valid ~ span {
+  transform: translateX(-13px) translateY(-35px);
+  font-size: 1em;
+}
+.center .inputbox [type="button"] {
+  width: 50%;
+  background: dodgerblue;
+  color: #fff;
+  border: #fff;
+}
+.center .inputbox:hover [type="button"] {
+  background: linear-gradient(45deg, greenyellow, dodgerblue);
+}
+.button {
+  background-color: #008CBA; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+    </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- page Navigation -->
+    <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/static/assets/imgs/logo.svg" alt="">
+            </a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">                     
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jobs">Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jobseeker">Jobseeker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/employers">Employers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contacts">Contact Us</a>
+                    </li>
+                     <!-- drop down -->
+                     <div class="nav-item dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img src="https://www.tutorialrepublic.com/examples/images/avatar/3.jpg" class="avatar" alt="Avatar"> {{user}} <b class="caret"></b></a>
+                        <div class="dropdown-menu">
+                            <a href="/updateprofile" class="dropdown-item"><i class="fa fa-user-o"></i>Update Profile</a>
+                            <a href="/userlogout" class="dropdown-item"><i class="fa fa-calendar-o"></i>Logout</a>
+                        </div>
+                    </div>
+                    <!-- drop ended -->
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Of Second Navigation -->
+
+    <!-- Page Header -->
+    <header class="header">
+        <div class="overlay">
+            <h1 class="subtitle"></h1>
+            <h1 class="title">User add Jobs</h1>  
+        </div>  
+        <div class="shape">
+            <svg viewBox="0 0 1500 200">
+                <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z"/>
+            </svg>
+        </div>  
+        <div class="mouse-icon"><div class="wheel"></div></div>
+    </header>
+    <!-- End Of Page Header -->
+
+
+    <!-- Customer Add Jobs -->
+    <div class="center">
+        <h1>User Add Jobs</h1>
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="inputbox">
+          <input type="email" name="email" required="required">
+          <span>User Email</span>
+        </div>
+
+          <div class="inputbox">
+            <input type="text" name="jobtitle" required="required">
+            <span>Jobtitle</span>
+          </div>
+          <div class="inputbox">
+            <input type="text" name="companyname"  required="required">
+            <span>Company Name</span>
+          </div>
+          <div class="inputbox">
+            <label>Company Logo</label>
+            <input type="file" name="companylogo"  required="required">
+          </div>
+          <select id="country" name="jobselect">
+            <option value="jobselect">Job Select</option>
+            <option value="Fresher">Fresher</option>
+            <option value="WebDevloper">Web Devloper</option>
+            <option value="Digital Marketing">Digital Marketing</option>
+            <option value="Sales Man">Sales Man</option>
+            <option value="Printing Press">Printing Press</option>
+            <option value="Industrial Worker">Industrial Worker</option>
+            <option value="Bank">Bank</option>
+            <option value="It Zone">It Zone</option>
+            <option value="BusinessDevelopmentExecutive"> Business Development Executive</option>
+            <option value="Hacker">Hacker</option>
+            <option value="Telecaller">Telecaller</option>
+            <option value="other">other</option>
+          </select>
+          <div class="inputbox">
+            <input type="text" name="city"  required="required">
+            <span>City</span>
+          </div>
+          <div class="inputbox">
+            <input type="text" name="description" style="height:140px"  required="required">
+            <span>Description</span>
+          </div>
+          <div class="inputbox">
+            <input type="submit" style="margin-top: 50px;" value="Add Jobs">
+          </div>
+        </form>
+      </div>
+    <!-- Customer Endede -->
+
+
+
+
+    
+</body>
+</html>
+{%endblock%}
